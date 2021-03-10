@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ContentResolverContacts</string>
+    <string name="showContacts">Show Contacts</string>
+</resources>
