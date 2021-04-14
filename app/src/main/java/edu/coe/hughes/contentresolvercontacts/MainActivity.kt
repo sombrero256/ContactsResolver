@@ -58,7 +58,6 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence, start:Int, before: Int, count: Int) {}
         });
     }
-
     // create cursor and query the data
     val contacts: Unit
         get() {
