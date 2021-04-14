@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     var listView: ListView? = null
     var button: Button? = null
     var personName: EditText?= null
+    var searchName: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +50,8 @@ class MainActivity : AppCompatActivity() {
 
            override fun afterTextChanged(s: Editable) {
                Log.i("MAIN", "Text changed")
-
+               searchName = personName!!.text.toString()
+               contacts
             }
 
             override fun beforeTextChanged(s: CharSequence, start:Int, count: Int, after: Int) {}
@@ -64,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
             val uri: Uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI
             //val cursor = contentResolver.query(uri, null, null, null, null)
-            val cursor = contentResolver.query(uri, null, "DISPLAY_NAME = 'Jon White'", null, null)
+            val cursor = contentResolver.query(uri, null, "DISPLAY_NAME = '$searchName'", null, null)
 
             val data = arrayOf(ContactsContract.CommonDataKinds.Phone.NUMBER, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
             val to = intArrayOf(android.R.id.text1, android.R.id.text2)
