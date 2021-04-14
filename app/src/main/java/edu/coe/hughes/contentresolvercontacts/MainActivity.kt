@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         });
     }
 
+
     // create cursor and query the data
     val contacts: Unit
         get() {
